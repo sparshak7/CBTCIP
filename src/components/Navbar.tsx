@@ -1,28 +1,15 @@
-import { Input } from "./ui/input";
-import { useSearchContext } from "./hooks/useSearchContext";
+import { Link } from "react-router-dom";
+import Search from "./Search";
 
 const Navbar = () => {
-  const {setQuery} = useSearchContext();
-
-  const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      const target = e.target as HTMLInputElement;
-      setQuery(target.value);
-    }
-  };
-
   return (
     <nav className="container mx-auto flex justify-between items-center border-b border-border py-4">
-      <div className="italic tracking-wider font-medium">
-        Weather<span className="text-cyan-300">Vue</span>
-      </div>
-      <div className="">
-        <Input
-          onKeyUp={handleKeyUp}
-          type="text"
-          placeholder="Search for a particular place"
-        />
-      </div>
+      <Link to="/">
+        <div className="italic tracking-wider font-medium md:text-lg">
+          Weather<span className="text-cyan-300">Vue</span>
+        </div>
+      </Link>
+      <Search />
     </nav>
   );
 };

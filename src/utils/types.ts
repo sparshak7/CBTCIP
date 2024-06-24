@@ -35,3 +35,19 @@ export type ContextProps = {
   setQuery: React.Dispatch<React.SetStateAction<string>>;
 };
 
+export type LocationProps = {
+  data: WeatherData | undefined;
+};
+
+export type ReportProps = {
+  data: WeatherData | undefined;
+  toggle: boolean;
+  setToggle: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export type TempButtonProps = {
+  toggle: boolean;
+  setToggle: React.Dispatch<React.SetStateAction<boolean>>;
+  text: string;
+};
+
